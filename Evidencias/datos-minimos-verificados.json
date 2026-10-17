@@ -1,0 +1,25 @@
+{
+  "limite_rechazado_sin_crear": true,
+  "gastos_antes": 4,
+  "gastos_despues": 7,
+  "antes": {
+    "bytes": 376,
+    "campos": [
+      "consulta",
+      "resumen"
+    ],
+    "categorias": 4,
+    "origen": "mcp",
+    "respuesta": "Gastas más en comida: 27.00 en 3 gasto(s)."
+  },
+  "despues": {
+    "bytes": 376,
+    "campos": [
+      "consulta",
+      "resumen"
+    ],
+    "categorias": 4,
+    "origen": "mcp",
+    "respuesta": "Gastas más en comida: 30.00 en 6 gasto(s)."
+  }
+}
