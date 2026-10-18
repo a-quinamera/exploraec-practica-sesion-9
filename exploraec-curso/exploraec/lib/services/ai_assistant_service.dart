@@ -40,8 +40,15 @@ class AccionPropuesta {
         descripcion is! String ||
         descripcion.trim().isEmpty ||
         monto is! num ||
+        !monto.isFinite ||
         monto <= 0 ||
-        categoria is! String) {
+        categoria is! String ||
+        !const {
+          'comida',
+          'transporte',
+          'entretenimiento',
+          'otros',
+        }.contains(categoria)) {
       return null;
     }
     return AccionPropuesta(
@@ -59,9 +66,11 @@ class RespuestaIA {
   const RespuestaIA({required this.respuesta, this.accion});
 
   factory RespuestaIA.fromJson(Map<String, dynamic> json) => RespuestaIA(
-        respuesta: (json['respuesta'] as String?) ?? 'El asistente no devolvió ninguna respuesta.',
-        accion: AccionPropuesta.desdeJson(json['accion']),
-      );
+    respuesta:
+        (json['respuesta'] as String?) ??
+        'El asistente no devolvió ninguna respuesta.',
+    accion: AccionPropuesta.desdeJson(json['accion']),
+  );
 }
 
 /// Error del asistente ya traducido a un mensaje legible.
@@ -78,14 +87,17 @@ class AsistenteException implements Exception {
 /// el token de la sesión (en la cabecera, nunca en el cuerpo ni en los logs).
 class AiAssistantService {
   AiAssistantService({ApiClient? api, Dio? dio})
-      : _api = api ?? Get.find<ApiClient>(),
-        _dio = dio ??
-            Dio(BaseOptions(
+    : _api = api ?? Get.find<ApiClient>(),
+      _dio =
+          dio ??
+          Dio(
+            BaseOptions(
               baseUrl: kAiBackendUrl,
               connectTimeout: const Duration(seconds: 20),
               sendTimeout: const Duration(seconds: 20),
               receiveTimeout: const Duration(seconds: 20),
-            ));
+            ),
+          );
 
   final ApiClient _api;
   final Dio _dio;
@@ -96,11 +108,15 @@ class AiAssistantService {
       final r = await _dio.post(
         '/asistente',
         data: {'consulta': consulta, 'resumen': resumen.toJson()},
-        options: Options(headers: {if (token != null) 'Authorization': 'Bearer $token'}),
+        options: Options(
+          headers: {if (token != null) 'Authorization': 'Bearer $token'},
+        ),
       );
       final json = r.data;
       if (json is! Map) {
-        throw AsistenteException('La respuesta del asistente no tiene el formato esperado.');
+        throw AsistenteException(
+          'La respuesta del asistente no tiene el formato esperado.',
+        );
       }
       return RespuestaIA.fromJson(Map<String, dynamic>.from(json));
     } on DioException catch (e) {
@@ -108,15 +124,22 @@ class AiAssistantService {
         case DioExceptionType.connectionTimeout:
         case DioExceptionType.sendTimeout:
         case DioExceptionType.receiveTimeout:
-          throw AsistenteException('El asistente tardó demasiado en responder. Inténtalo de nuevo.');
+          throw AsistenteException(
+            'El asistente tardó demasiado en responder. Inténtalo de nuevo.',
+          );
         case DioExceptionType.badResponse:
-          final detail = e.response?.data is Map ? (e.response!.data as Map)['detail'] : null;
-          throw AsistenteException(detail is String
-              ? detail
-              : 'El asistente respondió con un error (código ${e.response?.statusCode}).');
+          final detail = e.response?.data is Map
+              ? (e.response!.data as Map)['detail']
+              : null;
+          throw AsistenteException(
+            detail is String
+                ? detail
+                : 'El asistente respondió con un error (código ${e.response?.statusCode}).',
+          );
         default:
           throw AsistenteException(
-              'No se pudo conectar con el asistente. Revisa que el proxy esté encendido.');
+            'No se pudo conectar con el asistente. Revisa que el proxy esté encendido.',
+          );
       }
     }
   }

@@ -1,0 +1,7 @@
+✅ 1/4 Backend encendido (http://localhost:8000/health)
+✅ 2/4 Inicio de sesión correcto (token obtenido; no se imprime)
+✅ 3/4 MCP del backend (http://localhost:8000/mcp/): 7 herramientas; resumen_gastos devolvió 4 categorías, total 15.25
+✅ 4/4 El proxy obtuvo tu resumen del backend por MCP y la IA respondió:
+   «Gastas más en comida: 12.00 en 1 gasto(s).»
+
+Todo bien: la cadena completa funciona.

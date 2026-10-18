@@ -1,0 +1,29 @@
+00:00 +0: loading PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart
+00:00 +0: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: (setUpAll)
+00:00 +0: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 2 — el interceptor agrega «Authorization: Bearer» a cada petición
+00:00 +1: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 2 — iniciar sesión (formulario) guarda el token y deja el usuario
+00:00 +2: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 2 — contraseña incorrecta muestra el mensaje del servidor
+00:00 +3: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 3 — registrar crea la cuenta y entra
+00:00 +4: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 3 — correo repetido muestra el detail del servidor
+00:00 +5: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 4 — restaurar sesión con un token guardado válido
+00:00 +6: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 4 — restaurar sesión con un token caducado lo borra
+00:00 +7: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 5 — las categorías vienen del servidor
+00:00 +8: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 5 — crear un gasto lo guarda y refresca la lista
+00:00 +9: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 5 — el límite de 500 llega como ApiException con el detail
+00:00 +10: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 6 — editar envía SOLO los campos que cambiaron
+00:00 +11: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 6 — eliminar quita el gasto de la lista
+00:00 +12: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 6 — un 404 al eliminar refresca la lista
+00:00 +13: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 7 — un 401 cierra la sesión y avisa que caducó
+00:00 +14: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: Paso 8 — cerrar sesión borra la lista y la caja de Hive del usuario
+00:00 +15: PROYECTO/exploraec-curso/exploraec/test/sesion_08_test.dart: (tearDownAll)
+00:01 +15: PROYECTO/exploraec-curso/exploraec/test/sesion_09_test.dart: (setUpAll)
+00:01 +15: PROYECTO/exploraec-curso/exploraec/test/sesion_09_test.dart: El resumen viaja con los nombres del contrato y solo con totales por categoría
+00:01 +16: PROYECTO/exploraec-curso/exploraec/test/sesion_09_test.dart: El servicio envía consulta y resumen (nada más) y el token solo en la cabecera
+00:01 +17: PROYECTO/exploraec-curso/exploraec/test/sesion_09_test.dart: Una acción válida se lee; una incompleta se descarta
+00:01 +18: PROYECTO/exploraec-curso/exploraec/test/sesion_09_test.dart: Descarta categorías desconocidas y montos inválidos sin perder el texto
+00:01 +19: PROYECTO/exploraec-curso/exploraec/test/sesion_09_test.dart: Proxy apagado: mensaje claro, no una traza técnica
+00:01 +20: PROYECTO/exploraec-curso/exploraec/test/sesion_09_test.dart: Paso 4 — preguntar muestra la respuesta del proxy
+00:03 +21: PROYECTO/exploraec-curso/exploraec/test/sesion_09_test.dart: Paso 5 — una acción propuesta pide confirmación y, al aceptar, crea el gasto
+00:04 +22: PROYECTO/exploraec-curso/exploraec/test/sesion_09_test.dart: Paso 5 — cancelar la acción no crea ningún gasto
+00:06 +23: PROYECTO/exploraec-curso/exploraec/test/sesion_09_test.dart: (tearDownAll)
+00:06 +23: All tests passed!

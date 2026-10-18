@@ -1,0 +1,38 @@
+{
+  "fecha": "2026-10-18",
+  "modo": "reglas, sin clave",
+  "antes": {
+    "origen": [
+      "mcp"
+    ],
+    "gastos": 3,
+    "filas": 4,
+    "bytes": 379
+  },
+  "despues": {
+    "origen": [
+      "mcp"
+    ],
+    "gastos": 6,
+    "filas": 4,
+    "bytes": 379
+  },
+  "campos": [
+    "consulta",
+    "resumen"
+  ],
+  "camposResumen": [
+    "categorias",
+    "total_general"
+  ],
+  "camposCategoria": [
+    "categoria",
+    "total",
+    "cantidad",
+    "disponible"
+  ],
+  "sinDescripciones": true,
+  "sinFechas": true,
+  "sinCorreo": true,
+  "tokenSoloCabecera": true
+}

@@ -62,7 +62,13 @@ flutter test
 node mock-server/probar-e2e.js tu-correo@example.com tu-contraseña
 ```
 
-La prueba de extremo a extremo usa tu cuenta local y debe mostrar cuatro comprobaciones correctas. Nunca imprime el token. No guardar la contraseña de tu cuenta en archivos del proyecto. En Antigravity, Testing → Run Tests ejecuta las 22 pruebas oficiales; el panel cuenta también las cuatro entradas de preparación y muestra 26/26.
+La prueba de extremo a extremo usa tu cuenta local y debe mostrar cuatro comprobaciones correctas. Nunca imprime el token. No guardar la contraseña de tu cuenta en archivos del proyecto. En Antigravity, Testing → Run Tests ejecuta la suite de pruebas; el panel puede contar también entradas de preparación. La verificación actual por consola aprobó 23 pruebas.
+
+## Actividad contrastada con la grabación — 18 de octubre de 2026
+
+La revisión de la grabación y de las 38 diapositivas está en [ACTIVIDAD-SESION-9.md](ACTIVIDAD-SESION-9.md), con correspondencia de temas, respuestas a las dinámicas y alcance de la demo.
+
+Se reforzó la validación de acciones (categorías admitidas y montos finitos) y se verificaron **23 tests aprobados**, análisis sin problemas, compilación web y **E2E 4/4 contra el backend real y MCP**. En Brave pasaron consulta, mini-reto, cancelación, confirmación, rechazo del límite y recuperación del proxy. Las [evidencias actuales](Evidencias/Validacion-2026-10-18/) distinguen esta verificación de la realizada el 14 de octubre. Se mantiene el modo de reglas sin clave elegido por el estudiante; Gemini y el agente autónomo no se presentan como comprobados.
 
 ## Resultado verificado el 14 de octubre de 2026
 
